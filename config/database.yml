@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: ubuntu
+  password: ubuntu
+  host: localhost
+development:
+  <<: *default
+  database: demo_depo_development
+test:
+  <<: *default
+  database: demo_depo_test
+production:
+  <<: *default
+  database: demo_depo_production
+  username: <%= ENV['DEMO_DEPO_DATABASE_USERNAME'] %>
+  password: <%= ENV['DEMO_DEPO_DATABASE_PASSWORD'] %>
