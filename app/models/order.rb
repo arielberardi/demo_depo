@@ -16,4 +16,8 @@ class Order < ApplicationRecord
       line_items << item
     end
   end
+
+  def charge!(pay_type_params)
+    puts('Make a payment stubs')
+  end
 end
